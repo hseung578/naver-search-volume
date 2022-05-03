@@ -1,6 +1,7 @@
 import streamlit as st
 from datetime import datetime
 import pandas as pd
+import matplotlib 
 import matplotlib.pyplot as plt
 import seaborn as sns
 from dateutil.relativedelta import relativedelta
@@ -73,7 +74,7 @@ def get_chart(data):
     plt.ylabel("volume")
     for i in range(len(search_word)):
         sns.lineplot(x=df["period"], y=df[search_word[i]], label=search_word[i])
-    plt.rcParams["font.family"] = "Malgun Gothic"  # type: ignore
+    matplotlib.rcParams["font.family"] = "Malgun Gothic" 
     return fig
     
 st.title("NAVER Keyword Search Volume")
